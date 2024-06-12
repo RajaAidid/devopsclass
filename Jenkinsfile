@@ -8,6 +8,7 @@ pipeline{
 			steps {
 			sh '''
    			ls -a
+			docker --help
 			docker compose up
 			'''
 			}
