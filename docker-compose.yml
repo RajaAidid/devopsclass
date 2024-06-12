@@ -1,0 +1,41 @@
+name: docker-devops-lessons
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_ROOT_PASSWORD: password
+      POSTGRES_DATABASE: devops
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    networks:
+      - mynetwork
+
+  backend:
+    build:
+      context: DevopsClass
+    restart: always
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_ROOT_PASSWORD: password
+      POSTGRES_DATABASE: devops
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: DevopsClassFront/dist
+    restart: always
+    ports:
+      - "80:80"
+
+networks:
+  mynetwork:
+    driver: bridge
