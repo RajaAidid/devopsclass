@@ -7,8 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			COPY ./ root/home/
-      			cd root/home/
+   			ls -a
 			docker compose up -d
 			'''
 			}
