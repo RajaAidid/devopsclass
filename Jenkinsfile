@@ -7,6 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
+   			groupadd docker
    			usermod -aG docker root
    			service docker start
 			docker compose up
