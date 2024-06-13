@@ -7,7 +7,6 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-  			groupadd docker
      			usermod -aG docker root
 			newgrp docker
    			docker run hello-world
