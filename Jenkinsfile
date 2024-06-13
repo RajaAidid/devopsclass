@@ -7,9 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-     			usermod -aG docker root
-			newgrp docker
-   			docker run hello-world
+   			service docker start
 			docker compose up
 			'''
 			}
