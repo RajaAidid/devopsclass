@@ -7,11 +7,6 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			ls -a
-      			cd DevopsClassFront
-	 		ls -a
-    			cd dist
-       			ls -a
 			docker compose up
 			'''
 			}
