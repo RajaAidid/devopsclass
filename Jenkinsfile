@@ -7,8 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			service docker start
-			sleep 30
+   			usermod -aG docker root
    			docker run hello-world
 			docker compose up
 			'''
