@@ -8,7 +8,8 @@ pipeline{
 			steps {
 			sh '''
    			service docker start
-			sleep 15
+			sleep 30
+   			docker run hello-world
 			docker compose up
 			'''
 			}
