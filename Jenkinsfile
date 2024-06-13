@@ -14,7 +14,7 @@ pipeline{
 		stage('Test') {
 			steps {
 			sh '''
-			apt update
+			apt update -y
 			apt upgrade -y
 			apt-get install python3-pip
 			python3 - m venv /venv
