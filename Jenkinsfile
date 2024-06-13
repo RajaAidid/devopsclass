@@ -7,7 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			echo whoami
+   			echo $whoami
    			service docker start
 			docker compose up
 			'''
