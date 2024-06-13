@@ -7,10 +7,9 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-  			sudo groupadd docker
-     			sudo usermod -aG docker $USER
+  			groupadd docker
+     			usermod -aG docker root
 			newgrp docker
-   			docker run hello-world
    			docker run hello-world
 			docker compose up
 			'''
