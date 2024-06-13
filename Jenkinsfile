@@ -7,7 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			echo $whoami
+   			usermod -aG docker $USER
    			service docker start
 			docker compose up
 			'''
