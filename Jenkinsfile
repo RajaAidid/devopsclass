@@ -7,7 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			usermod -aG docker $USER
+   			usermod -aG docker root
    			service docker start
 			docker compose up
 			'''
