@@ -7,8 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			ls -a
-			docker version
+   			docker run hello-world
 			docker compose up
 			'''
 			}
