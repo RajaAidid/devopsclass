@@ -7,7 +7,6 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			docker run hello-world
 			docker compose up
 			'''
 			}
