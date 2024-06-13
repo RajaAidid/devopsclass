@@ -7,6 +7,7 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
+   			service docker start
 			docker compose up
 			'''
 			}
