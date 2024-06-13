@@ -2,13 +2,13 @@ name: docker-devops-lessons
 
 services:
   db:
-    image: postgres
+    image: mysql
     restart: always
     environment:
-      POSTGRES_ROOT_PASSWORD: password
-      POSTGRES_DATABASE: devops
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: devops
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
     networks:
       - mynetwork
 
@@ -17,11 +17,11 @@ services:
       context: DevopsClass
     restart: always
     environment:
-      POSTGRES_HOST: db
-      POSTGRES_ROOT_PASSWORD: password
-      POSTGRES_DATABASE: devops
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+      MYSQL_HOST: db
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: devops
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
     depends_on:
       - db
     networks:
