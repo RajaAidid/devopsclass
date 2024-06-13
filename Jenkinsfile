@@ -7,7 +7,6 @@ pipeline{
 		stage('Build'){
 			steps {
 			sh '''
-   			systemctl start docker
    			docker run hello-world
 			docker compose up
 			'''
