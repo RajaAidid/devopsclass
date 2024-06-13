@@ -29,6 +29,13 @@ services:
     ports:
       - "8000:8000"
 
+  frontend:
+    build:
+      context: DevopsClassFront/dist
+    restart: always
+    ports:
+      - "80:80"
+
 networks:
   mynetwork:
     driver: bridge
